@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/header/index'
+import Home from './components/home/index'
+import About from './components/about/index'
+import Skills from './components/skills/index'
+import Experience from './components/experience/index'
+import Portfolio from './components/portfolio/index'
+import Contact from './components/contact/index'
+import Footer from './components/footer/index'
+import ScrollTop from './components/ScrollTop'
+import { useEffect, useLayoutEffect, useState } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+	const [isDarkTheme, setDarkTheme] = useState(false)
+	const hour = new Date().getHours()
+
+	useLayoutEffect(() => {
+		if (hour > 19) {
+			setDarkTheme(true)
+		}
+	},[])
+
+	useEffect(() => {
+		isDarkTheme
+			? document.body.classList.add('dark-theme')
+			: document.body.classList.remove('dark-theme')
+	}, [isDarkTheme])
+	
+	return (
+		<div>
+			<Header isDarkTheme={isDarkTheme} setDarkTheme={() => setDarkTheme(!isDarkTheme)}  />
+			<Home />
+			<About />
+			<Skills />
+			<Experience />
+			<Portfolio />
+			<Contact />
+			<Footer />
+			<ScrollTop/>
+		</div>
+	)
 }
 
-export default App;
+export default App
+
