@@ -5,17 +5,17 @@ const Footer = () => {
 			<div className="footer__container container grid">
 				<div>
 					<h1 className="footer__title">Hibana</h1>
-					<span className="footer__subtitle">Frontend Developer</span>
+					<span className="footer__subtitle">前端攻城狮</span>
 				</div>
 				<ul className="footer__links">
 					<li>
 						<a href="#about" className="footer__link">
-							Home
+							主页
 						</a>
 					</li>
 					<li>
 						<a href="#about" className="footer__link">
-							About
+							关于
 						</a>
 					</li>
 					<li>

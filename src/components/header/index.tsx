@@ -2,22 +2,22 @@ import { useEffect, useRef, useState } from 'react'
 import ColorPicker from '../ColorPicker'
 const navList = [
 	{
-		href: '#home',title: 'Home',iconClass: 'uil uil-estate',
+		href: '#home',title: '主页',iconClass: 'uil uil-estate',
 	},
 	{
-		href: '#about',title: 'About',iconClass: 'uil uil-user',
+		href: '#about',title: '关于',iconClass: 'uil uil-user',
 	},
 	{
-		href: '#skills',title: 'Skills',iconClass: 'uil uil-file-alt',
+		href: '#skills',title: '技术',iconClass: 'uil uil-file-alt',
 	},
 	{
-		href: '#experience',title: 'Experience',iconClass: 'uil uil-briefcase-alt',
+		href: '#experience',title: '经历',iconClass: 'uil uil-briefcase-alt',
 	},
 	{
-		href: '#portfolio',title: 'Portfolio',iconClass: 'uil uil-scenery',
+		href: '#portfolio',title: '项目',iconClass: 'uil uil-scenery',
 	},
 	{
-		href: '#contact',title: 'Contact',iconClass: 'uil uil-message',
+		href: '#contact',title: '联系',iconClass: 'uil uil-message',
 	},
 ]
 
@@ -41,7 +41,6 @@ const Header = ({isDarkTheme,setDarkTheme}:Props) => {
 	useEffect(() => {
 		scrollNav()
 		scrollHeader()
-		
 	}, [])
 
 	const scrollNav = () => {
@@ -50,7 +49,7 @@ const Header = ({isDarkTheme,setDarkTheme}:Props) => {
 		const sections = sectionsEl.sort((a, b) => a.offsetTop - b.offsetTop)
 
 		const scrollNavActive = () => {
-			const scrollY = window.pageYOffset + 2
+			const scrollY = window.pageYOffset + window.screenY
 			
 			sections.reduce((p, c,i) => {
 				let navItems = document.querySelectorAll('.nav__link')

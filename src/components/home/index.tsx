@@ -1,5 +1,5 @@
 import HomeSvg from './HomeSvg'
-import portfiolio from '../../assets/images/portfolio.png'
+import portfiolio from '../../assets/images/me.gif'
 
 const socialList = [
 	{
@@ -31,14 +31,14 @@ const Home = () => {
 					</div>
 					<div className="home__img">
 						<HomeSvg className="home__blob">
-							<image className="home__blob-img"  xlinkHref={portfiolio}></image>
+							<image className="home__blob-img" xlinkHref={portfiolio}></image>
 						</HomeSvg>
 					</div>
 					<div className="home__data">
-					<h1 className="home__title">Hi,i'am Hibana</h1>
-					<h3 className="home__subtitle">Frontend Developer</h3>
+					<h1 className="home__title">Hi，我是 GLS</h1>
+					<h3 className="home__subtitle">新进前端工程师</h3>
 					<p className="home__description">
-						High level experience in web design and knowledge, producing quality work.
+						生而为人，习惯吃饭、睡觉、学习、Keep、音乐、娱乐、游戏，想创建自己的Website...
 					</p>
 					<a href="#contact" className="button button--flex">
 						Contact Me

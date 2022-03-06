@@ -12,9 +12,10 @@ import { useEffect, useLayoutEffect, useState } from 'react'
 const App = () => {
 
 	const [isDarkTheme, setDarkTheme] = useState(false)
-	const hour = new Date().getHours()
 
 	useLayoutEffect(() => {
+		const hour = new Date().getHours()
+
 		if (hour > 19) {
 			setDarkTheme(true)
 		}
