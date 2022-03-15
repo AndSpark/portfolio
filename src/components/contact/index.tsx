@@ -4,41 +4,41 @@ const contactList = [
 	{
 		icon: 'uil uil-phone',
 		title: '手机',
-		subtitle: '13777041196',
+		subtitle: '13777041196'
 	},
 	{
 		icon: 'uil uil-envelope',
 		title: '邮箱',
-		subtitle: '421786477@qq.com',
+		subtitle: '421786477@qq.com'
 	},
 	{
 		icon: 'uil uil-map-marker',
 		title: '人在',
-		subtitle: '浙江省 宁波市 ',
-	},
+		subtitle: '浙江省 宁波市 '
+	}
 ]
 
 const Contact = () => {
 	const [formData, setFormData] = useState({
 		name: '',
 		email: '',
-		message: '',
+		message: ''
 	})
 	const postForm = async (e: any) => {
 		e.preventDefault()
-		const res = await fetch(process.env.REACT_APP_URL + '/portfolio', {
+		const res = await fetch('https://hibana.xyz/portfolio', {
 			method: 'POST',
 			headers: {
 				Accept: 'application/json',
-				'Content-Type': 'application/json',
+				'Content-Type': 'application/json'
 			},
-			body: JSON.stringify(formData),
+			body: JSON.stringify(formData)
 		})
 		if (res.status === 201) {
 			setFormData({
 				name: '',
 				email: '',
-				message: '',
+				message: ''
 			})
 			alert('提交成功,我会尽快联系您')
 		} else {
@@ -51,7 +51,7 @@ const Contact = () => {
 			<h2 className='section__title'>联系</h2>
 			<span className='section__subtitle'>Get in toch</span>
 			<div className='contact__container container grid'>
-				<div style={{ display: 'flex', width: '100%', justifyContent: 'space-between' }}>
+				<div>
 					{contactList.map(v => (
 						<div className='contact__information' key={v.title}>
 							<i className={v.icon + ' contact__icon'}></i>
@@ -63,7 +63,7 @@ const Contact = () => {
 					))}
 					<img src={contactGif} alt='contact' />
 				</div>
-				{/* <form action='' className='contact__form grid'>
+				<form action='' className='contact__form grid'>
 					<div className='contact__inputs grid'>
 						<div className='contact__content'>
 							<label className='contact__label'>称呼：</label>
@@ -98,7 +98,7 @@ const Contact = () => {
 							</a>
 						</div>
 					</div>
-				</form> */}
+				</form>
 			</div>
 		</section>
 	)

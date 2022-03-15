@@ -812,7 +812,8 @@ img {
 	.about__container,
 	.portfolio__content,
 	.footer__container,
-	.skills__container {
+	.skills__container,
+	.contact__container {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
